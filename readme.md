@@ -12,7 +12,7 @@ Aplicación CRUD desarrollada en C++ con Qt para la gestión de un torneo de fú
 - Edición y eliminación de equipos
 - Simulación de fases del torneo (grupos, octavos, semifinal y final)
 
-## Tecnologías
+## Herramientas
 - C++
 - Qt Creator
 - GitHub
