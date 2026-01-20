@@ -37,7 +37,13 @@ else()
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(ControlDeTorneoDeEquiposDeFutbol
-            ${PROJECT_SOURCES}
+            main.cpp
+            mainwindow.cpp
+            mainwindow.h
+            mainwindow.ui
+            crear.cpp
+            crear.h
+            crear.ui
         )
     endif()
 endif()
