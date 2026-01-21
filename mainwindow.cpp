@@ -22,3 +22,13 @@ void MainWindow::on_Crear_clicked()
     v->setModal(true);
     v->show();
 }
+
+void MainWindow::on_Leer_clicked()
+{
+    // Creamos una instancia de tu ventana
+    Visualizar *ventanaVisualizar = new Visualizar(this);
+
+    // La mostramos
+    ventanaVisualizar->show();
+}
+

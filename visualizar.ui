@@ -6,13 +6,61 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>817</width>
+    <height>563</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>721</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>NOMBRE</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>CIUDAD</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>DT</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>PUNTOS</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="btnCargar">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>380</y>
+     <width>90</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cargar</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
