@@ -17,6 +17,10 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        crear.cpp
+        crear.h
+        crear.ui
+        recursos.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

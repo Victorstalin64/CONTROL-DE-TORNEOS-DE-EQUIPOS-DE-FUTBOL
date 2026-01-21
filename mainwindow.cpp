@@ -1,6 +1,6 @@
 #include "mainwindow.h"
-#include "crear.h"
 #include "./ui_mainwindow.h"
+#include "crear.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -16,7 +16,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Crear_clicked()
 {
-    // Usamos 'crear' en minúsculas porque así se llama tu clase
     crear *v = new crear(this);
 
     v->setAttribute(Qt::WA_DeleteOnClose);
