@@ -15,6 +15,9 @@ public:
     explicit crear(QWidget *parent = nullptr);
     ~crear();
 
+private slots:
+    void on_toolButton_clicked();
+
 private:
     Ui::crear *ui;
 };
