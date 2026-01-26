@@ -15,6 +15,9 @@ public:
     explicit Visualizar(QWidget *parent = nullptr);
     ~Visualizar();
 
+private slots:
+    void on_btnCargar_clicked();
+
 private:
     Ui::Visualizar *ui;
 };

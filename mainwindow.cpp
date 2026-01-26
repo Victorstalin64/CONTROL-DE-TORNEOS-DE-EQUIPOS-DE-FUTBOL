@@ -25,10 +25,16 @@ void MainWindow::on_Crear_clicked()
 
 void MainWindow::on_Leer_clicked()
 {
-    // Creamos una instancia de tu ventana
-    Visualizar *ventanaVisualizar = new Visualizar(this);
+    // Al quitar el "this" o pasarle 0, la ventana se vuelve independiente
+    Visualizar *ventana = new Visualizar();
 
-    // La mostramos
-    ventanaVisualizar->show();
+    // Esto asegura que la ventana se borre de la memoria al cerrarla
+    ventana->setAttribute(Qt::WA_DeleteOnClose);
+
+    // Esto la hace "Modal" (opcional): impide tocar la ventana de atrás hasta cerrar esta
+    ventana->setWindowModality(Qt::ApplicationModal);
+
+    ventana->show();
+
 }
 
