@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "visualizar.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -19,6 +19,8 @@ public:
 
 private slots:
     void on_Crear_clicked();
+
+    void on_Leer_clicked();
 
 private:
     Ui::MainWindow *ui;
