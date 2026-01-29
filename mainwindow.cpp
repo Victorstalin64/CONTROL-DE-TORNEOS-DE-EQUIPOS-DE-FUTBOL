@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "crear.h"
+#include "visualizar.h"   // Asegúrate de que este archivo se llame así
+#include "eliminarequipo.h"
+#include "updateequipo.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,27 +17,38 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+// Botón CREAR
 void MainWindow::on_Crear_clicked()
 {
     crear *v = new crear(this);
-
     v->setAttribute(Qt::WA_DeleteOnClose);
     v->setModal(true);
     v->show();
 }
 
+// Botón LEER / MOSTRAR
 void MainWindow::on_Leer_clicked()
 {
-    // Al quitar el "this" o pasarle 0, la ventana se vuelve independiente
     Visualizar *ventana = new Visualizar();
-
-    // Esto asegura que la ventana se borre de la memoria al cerrarla
     ventana->setAttribute(Qt::WA_DeleteOnClose);
-
-    // Esto la hace "Modal" (opcional): impide tocar la ventana de atrás hasta cerrar esta
     ventana->setWindowModality(Qt::ApplicationModal);
-
     ventana->show();
-
 }
 
+// Botón ELIMINAR (Asegúrate que el botón en el .ui se llame "Eliminar")
+void MainWindow::on_Eliminar_clicked()
+{
+    eliminarequipo *ventanaE = new eliminarequipo(this);
+    ventanaE->setWindowFlags(Qt::Window);
+    ventanaE->setAttribute(Qt::WA_DeleteOnClose);
+    ventanaE->show();
+}
+
+// Botón ACTUALIZAR (Asegúrate que el botón en el .ui se llame "Actualizar")
+void MainWindow::on_Actualizar_clicked()
+{
+    updateequipo *ventanaU = new updateequipo(this);
+    ventanaU->setWindowFlags(Qt::Window);
+    ventanaU->setAttribute(Qt::WA_DeleteOnClose);
+    ventanaU->show();
+}

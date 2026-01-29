@@ -22,6 +22,10 @@ private slots:
 
     void on_Leer_clicked();
 
+    void on_Eliminar_clicked();
+
+    void on_Actualizar_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

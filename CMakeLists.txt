@@ -12,6 +12,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+# --- AQUÍ ESTÁ EL CAMBIO IMPORTANTE ---
+# Ponemos TODOS los archivos aquí para que el proyecto los reconozca siempre
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -20,6 +22,15 @@ set(PROJECT_SOURCES
         crear.cpp
         crear.h
         crear.ui
+        visualizar.cpp    # Tu ventana
+        visualizar.h
+        visualizar.ui
+        eliminarequipo.cpp # Lo del ZIP
+        eliminarequipo.h
+        eliminarequipo.ui
+        updateequipo.cpp   # Lo del ZIP
+        updateequipo.h
+        updateequipo.ui
         recursos.qrc
 )
 
@@ -27,33 +38,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(ControlDeTorneoDeEquiposDeFutbol
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        visualizar.h visualizar.cpp visualizar.ui
     )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET ControlDeTorneoDeEquiposDeFutbol APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
-    if(ANDROID)
-        add_library(ControlDeTorneoDeEquiposDeFutbol SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(ControlDeTorneoDeEquiposDeFutbol
-            main.cpp
-            mainwindow.cpp
-            mainwindow.h
-            mainwindow.ui
-            crear.cpp
-            crear.h
-            crear.ui
-        )
-    endif()
+    add_executable(ControlDeTorneoDeEquiposDeFutbol
+        ${PROJECT_SOURCES}
+    )
 endif()
 
 target_link_libraries(ControlDeTorneoDeEquiposDeFutbol PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
